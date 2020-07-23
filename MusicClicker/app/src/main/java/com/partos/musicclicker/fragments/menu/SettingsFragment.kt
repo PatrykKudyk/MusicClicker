@@ -1,13 +1,11 @@
-package com.partos.musicclicker.fragments
+package com.partos.musicclicker.fragments.menu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
 import com.partos.musicclicker.R
-import com.partos.musicclicker.logic.MainMenuLogic
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,15 +14,13 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [MainMenuFragment.newInstance] factory method to
+ * Use the [SettingsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MainMenuFragment : Fragment() {
+class SettingsFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var rootView: View
-    private lateinit var logicHolder: MainMenuLogic
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,10 +35,7 @@ class MainMenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        rootView = inflater.inflate(R.layout.fragment_main_menu, container, false)
-        logicHolder = MainMenuLogic(rootView, fragmentManager as FragmentManager)
-        logicHolder.initFragment()
-        return rootView
+        return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 
     companion object {
@@ -52,12 +45,12 @@ class MainMenuFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment MainMenuFragment.
+         * @return A new instance of fragment SettingsFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance() =
-            MainMenuFragment().apply {
+            SettingsFragment().apply {
                 arguments = Bundle().apply {
 
                 }

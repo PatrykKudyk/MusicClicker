@@ -4,7 +4,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.partos.musicclicker.R
-import com.partos.musicclicker.fragments.MainMenuFragment
+import com.partos.musicclicker.fragments.menu.MainMenuFragment
 
 class MainActivity : AppCompatActivity() {
 
