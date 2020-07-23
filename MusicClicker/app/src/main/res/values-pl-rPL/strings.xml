@@ -2,5 +2,10 @@
 <resources>
     <string name="app_name">MusicClicker</string>
     <string name="app_title">Music Clicker</string>
+    <string name="play">Graj</string>
+    <string name="settings">Ustawienia</string>
+    <string name="credits">Twórcy</string>
+    <string name="music">Muzyka</string>
+    <string name="sounds">Dźwięki</string>
 
 </resources>
