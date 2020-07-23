@@ -18,8 +18,24 @@ class SettingsLogic(val rootView: View) {
 
     fun initFragment() {
         attachViews()
+        applySounds()
         initImages()
         initListeners()
+    }
+
+    private fun applySounds() {
+        val settings = db.getSettings()
+        if (settings[0].sounds == 1){
+            musicImage.isSoundEffectsEnabled = true
+            musicCard.isSoundEffectsEnabled = true
+            soundsImage.isSoundEffectsEnabled = true
+            soundsCard.isSoundEffectsEnabled = true
+        } else {
+            musicImage.isSoundEffectsEnabled = false
+            musicCard.isSoundEffectsEnabled = false
+            soundsImage.isSoundEffectsEnabled = false
+            soundsCard.isSoundEffectsEnabled = false
+        }
     }
 
     private fun initListeners() {
@@ -47,10 +63,18 @@ class SettingsLogic(val rootView: View) {
                 soundsImage.setImageDrawable(rootView.context.getDrawable(R.drawable.ic_not_checked))
                 settings[0].sounds = 0
                 db.updateSettings(settings[0])
+                musicImage.isSoundEffectsEnabled = false
+                musicCard.isSoundEffectsEnabled = false
+                soundsImage.isSoundEffectsEnabled = false
+                soundsCard.isSoundEffectsEnabled = false
             } else {
                 soundsImage.setImageDrawable(rootView.context.getDrawable(R.drawable.ic_checked))
                 settings[0].sounds = 1
                 db.updateSettings(settings[0])
+                musicImage.isSoundEffectsEnabled = true
+                musicCard.isSoundEffectsEnabled = true
+                soundsImage.isSoundEffectsEnabled = true
+                soundsCard.isSoundEffectsEnabled = true
             }
         }
     }
