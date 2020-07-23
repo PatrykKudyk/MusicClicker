@@ -6,6 +6,6 @@ import androidx.fragment.app.FragmentManager
 class GameChoiceLogic (val rootView: View, val fragmentManager: FragmentManager) {
 
     fun initFragment() {
-
+        
     }
 }
