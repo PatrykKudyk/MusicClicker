@@ -4,10 +4,12 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.partos.musicclicker.R
+import com.partos.musicclicker.fragments.MainMenuFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mediaPlayer: MediaPlayer
+    private lateinit var mainMenuFragment: MainMenuFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +18,20 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer = MediaPlayer.create(this, R.raw.background)
         mediaPlayer.isLooping = true
         mediaPlayer.start()
+
+
+        mainMenuFragment = MainMenuFragment.newInstance()
+
+        supportFragmentManager
+            .beginTransaction()
+            .setCustomAnimations(
+                R.anim.enter_bottom_to_top,
+                R.anim.exit_top_to_bottom,
+                R.anim.enter_top_to_bottom,
+                R.anim.exit_bottom_to_top
+            )
+            .add(R.id.main_frame_layout, mainMenuFragment)
+            .commit()
     }
 
     override fun onPause() {
