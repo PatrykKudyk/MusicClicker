@@ -6,6 +6,9 @@
     <string name="credits">Credits</string>
     <string name="music">Music</string>
     <string name="sounds">Sounds</string>
+    <string name="credits_text_1">The app was made by Patryk Kudyk</string>
+    <string name="credits_text_2">Icons were made by Freepik, smalllikeart and ultimatearm \n
+    from flaticon.com</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
