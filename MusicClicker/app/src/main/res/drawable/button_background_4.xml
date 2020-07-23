@@ -3,6 +3,7 @@
 
     <gradient
         android:startColor="@color/colorMainDark"
+        android:angle="45"
         android:endColor="@color/colorMainDarkDark"/>
 
     <corners
