@@ -22,7 +22,7 @@
 
 
         <Button
-            android:id="@+id/main_menu_button_fast"
+            android:id="@+id/game_choice_button_fast"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/button_background_1"
@@ -46,7 +46,7 @@
             android:fontFamily="@font/kaushan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_menu_button_fast"
+            app:layout_constraintTop_toBottomOf="@id/game_choice_button_fast"
             android:gravity="center"/>
 
         <View
@@ -60,7 +60,7 @@
 
 
         <Button
-            android:id="@+id/main_menu_button_long"
+            android:id="@+id/game_choice_button_long"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/button_background_2"
@@ -84,7 +84,7 @@
             android:fontFamily="@font/kaushan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_menu_button_long"
+            app:layout_constraintTop_toBottomOf="@id/game_choice_button_long"
             android:gravity="center"/>
 
         <View
@@ -98,7 +98,7 @@
 
 
         <Button
-            android:id="@+id/main_menu_button_endless"
+            android:id="@+id/game_choice_button_endless"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/button_background_3"
