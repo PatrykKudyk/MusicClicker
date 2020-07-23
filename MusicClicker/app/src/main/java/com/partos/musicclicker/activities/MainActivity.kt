@@ -1,7 +1,8 @@
-package com.partos.musicclicker
+package com.partos.musicclicker.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.partos.musicclicker.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
