@@ -7,5 +7,6 @@
     <string name="credits">Twórcy</string>
     <string name="music">Muzyka</string>
     <string name="sounds">Dźwięki</string>
-
+    <string name="credits_text_1">Aplikacja stworzona przez Patryka Kudyka</string>
+    <string name="credits_text_2">Ikony stworzone przez Freepik, smalllikeart oraz ultimatearm z flaticon.com</string>
 </resources>
