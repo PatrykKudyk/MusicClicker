@@ -3,12 +3,116 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.game.GameChoiceFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/colorBackground">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.26"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/main_menu_button_fast"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_background_1"
+            android:fontFamily="@font/kaushan"
+            android:text="@string/game_fast"
+            android:textColor="@color/colorBackground"
+            android:textSize="25dip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view"
+            app:layout_constraintWidth_percent="0.64" />
+
+        <TextView
+            android:id="@id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/limit_fast"
+            android:textSize="18dip"
+            android:textColor="@color/colorMainDarkDark"
+            android:fontFamily="@font/kaushan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_menu_button_fast"
+            android:gravity="center"/>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.04"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView"/>
+
+
+        <Button
+            android:id="@+id/main_menu_button_long"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_background_2"
+            android:fontFamily="@font/kaushan"
+            android:text="@string/game_long"
+            android:textColor="@color/colorBackground"
+            android:textSize="25dip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view2"
+            app:layout_constraintWidth_percent="0.64" />
+
+        <TextView
+            android:id="@id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/limit_long"
+            android:textSize="18dip"
+            android:textColor="@color/colorMainDarkDark"
+            android:fontFamily="@font/kaushan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_menu_button_long"
+            android:gravity="center"/>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.04"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView2"/>
+
+
+        <Button
+            android:id="@+id/main_menu_button_endless"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/button_background_3"
+            android:fontFamily="@font/kaushan"
+            android:text="@string/game_endless"
+            android:textColor="@color/colorBackground"
+            android:textSize="25dip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view3"
+            app:layout_constraintWidth_percent="0.64" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
