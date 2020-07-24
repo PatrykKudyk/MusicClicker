@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/recycler_row_instrument_card"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:theme="@style/Theme.MaterialComponents.Light"
+        app:cardBackgroundColor="@color/colorMainLightLight"
+        app:cardCornerRadius="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/colorMainDarkDark"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_weight="25"
+                android:layout_height="120dp"
+                android:layout_gravity="center_vertical"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:cardBackgroundColor="@color/colorMainLightLightLight"
+                app:cardCornerRadius="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/colorMainDarkDark"
+                app:strokeWidth="2dp">
+
+                <ImageView
+                    android:id="@+id/recycler_row_instrument_image"
+                    android:layout_margin="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/lvl1002"/>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:weightSum="100"
+                android:layout_margin="8dp"
+                android:layout_weight="70"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/recycler_row_instrument_owned"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="30"
+                    tools:text="Owned 50"
+                    android:textSize="24dip"
+                    android:fontFamily="@font/dustismo_bold"
+                    android:gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="25"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:text="@string/income"
+                        android:textSize="24dip"
+                        android:fontFamily="@font/dustismo_bold"
+                        android:gravity="end|center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/recycler_row_instrument_income"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        tools:text="2 000"
+                        android:textSize="24dip"
+                        android:fontFamily="@font/dustismo_bold"
+                        android:gravity="end|center_vertical"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/money"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="45"
+                    android:orientation="horizontal">
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

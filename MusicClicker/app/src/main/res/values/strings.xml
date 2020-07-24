@@ -15,6 +15,10 @@
     <string name="limit_long">Until 500 000 000</string>
     <string name="second_income">Second income</string>
     <string name="back">Back</string>
+    <string name="owned">Owned</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="income">Income</string>
+    <string name="cost">Cost</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

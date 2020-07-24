@@ -16,5 +16,9 @@
     <string name="limit_long">Do 500 000 000</string>
     <string name="second_income">Przychód na sekundę</string>
     <string name="back">Wróć</string>
+    <string name="owned">Posiadane</string>
+    <string name="upgrade">Ulepsz</string>
+    <string name="income">Przychód</string>
+    <string name="cost">Koszt</string>
 
 </resources>
