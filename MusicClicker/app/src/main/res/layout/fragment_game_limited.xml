@@ -15,7 +15,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/colorGreen"
+            android:background="@color/colorYellow"
             android:orientation="horizontal"
             android:weightSum="100"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,14 +37,15 @@
                 android:src="@drawable/lvl1009" />
 
             <TextView
+                android:id="@+id/game_limited_money"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="60"
                 android:fontFamily="@font/kaushan"
                 android:gravity="center_vertical|end"
-                android:text="1 000 000 "
                 android:textColor="@color/colorBrownDark"
-                android:textSize="26dip" />
+                android:textSize="26dip"
+                tools:text="1 000 000 " />
 
 
             <View
@@ -60,8 +61,8 @@
 
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/game_limited_recycler_view"
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/game_limited_view_pager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,13 +74,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/colorGreen"
+            android:background="@color/colorYellow"
             android:orientation="vertical"
             android:weightSum="100"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.15"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/game_limited_recycler_view">
+            app:layout_constraintTop_toBottomOf="@id/game_limited_view_pager">
 
 
             <TextView
@@ -89,10 +90,11 @@
                 android:fontFamily="@font/kaushan"
                 android:gravity="center"
                 android:text="@string/second_income"
-                android:textColor="@color/colorBackground"
+                android:textColor="@color/colorBrown"
                 android:textSize="18dip" />
 
             <TextView
+                android:id="@+id/game_limited_income"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="30"
@@ -103,13 +105,14 @@
                 tools:text="1 000 000" />
 
             <Button
-                android:id="@+id/hame_limited_button_back"
+                android:id="@+id/game_limited_button_back"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_weight="40"
-                android:background="@drawable/button_background_green_2"
+                android:textColor="@color/colorBrown"
+                android:background="@drawable/button_background_yellow_2"
                 android:fontFamily="@font/kaushan"
                 android:text="@string/back"
                 android:textSize="22dip" />

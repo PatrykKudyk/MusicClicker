@@ -1,10 +1,10 @@
 package com.partos.musicclicker.fragments.game
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.partos.musicclicker.R
 import com.partos.musicclicker.logic.game.GameLimitedLogic
 
@@ -39,7 +39,7 @@ class GameLimitedFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_game_limited, container, false)
-        logicHolder = GameLimitedLogic(rootView)
+        logicHolder = GameLimitedLogic(rootView, gameType as Int)
         logicHolder.initFragment()
         return rootView
     }
