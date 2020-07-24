@@ -1,23 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#B4441C</color>
-    <color name="colorPrimaryDark">#2D1107</color>
-    <color name="colorAccent">#873315</color>
+    <color name="colorPrimary">#DB9501</color>
+    <color name="colorPrimaryDark">#2E2300</color>
+    <color name="colorAccent">#C05805</color>
 
-    <color name="colorGreen">#7DB41C</color>
+    <color name="colorGreenGreen">#7DB41C</color>
     <color name="colorBlue">#1C77B4</color>
     <color name="colorPurple">#901CB4</color>
     <color name="colorGrey">#444443</color>
-
-    <color name="colorBackground">#FAF3F1</color>
     <color name="colorBlack">#040404</color>
 
-    <color name="colorMainLightLightLight">#ECD0C6</color>
-    <color name="colorMainLightLight">#DAA28E</color>
-    <color name="colorMainLight">#C77355</color>
-    <color name="colorMain">#B4441C</color>
-    <color name="colorMainMedium">#873315</color>
-    <color name="colorMainDark">#5A220E</color>
-    <color name="colorMainDarkDark">#2D1107</color>
+
+    <color name="colorBrownDark">#1D1600</color>
+    <color name="colorBrown">#2E2300</color>
+    <color name="colorBrownLight">#423A20</color>
+
+
+    <color name="colorGreenDarkDark">#373401</color>
+    <color name="colorGreenDark">#524D02</color>
+    <color name="colorGreen">#6E6702</color>
+    <color name="colorGreenLight">#928D41</color>
+    <color name="colorGreenLightLight">#B6B381</color>
+
+    <color name="colorOrangeDarkDark">#602C03</color>
+    <color name="colorOrangeDark">#904204</color>
+    <color name="colorOrange">#C05805</color>
+    <color name="colorOrangeLight">#D08244</color>
+    <color name="colorOrangeLightLight">#E0AC82</color>
+
+    <color name="colorYellowDarkDark">#6E4B01</color>
+    <color name="colorYellowDark">#A47001</color>
+    <color name="colorYellow">#DB9501</color>
+    <color name="colorYellowLight">#E4B041</color>
+    <color name="colorYellowLightLight">#EDCA80</color>
+
+
+    <color name="colorBackground">#FDF8EF</color>
+
+    <color name="colorMainLightLightLight">#F6E5C0</color>
+    <color name="colorMainLightLight">#EDCA80</color>
+    <color name="colorMainLight">#E4B041</color>
+    <color name="colorMain">#DB9501</color>
+    <color name="colorMainMedium">#A47001</color>
+    <color name="colorMainDark">#6E4B01</color>
+    <color name="colorMainDarkDark">#372500</color>
 
 </resources>
