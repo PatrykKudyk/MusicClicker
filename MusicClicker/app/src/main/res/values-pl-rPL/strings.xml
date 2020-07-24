@@ -14,5 +14,7 @@
     <string name="game_endless">Bez końca</string>
     <string name="limit_fast">Do 1 000 000</string>
     <string name="limit_long">Do 500 000 000</string>
+    <string name="second_income">Przychód na sekundę</string>
+    <string name="back">Wróć</string>
 
 </resources>

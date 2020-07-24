@@ -13,6 +13,8 @@
     <string name="game_endless">Endless</string>
     <string name="limit_fast">Until 1 000 000</string>
     <string name="limit_long">Until 500 000 000</string>
+    <string name="second_income">Second income</string>
+    <string name="back">Back</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
