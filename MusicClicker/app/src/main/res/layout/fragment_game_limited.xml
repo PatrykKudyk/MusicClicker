@@ -15,7 +15,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/colorYellow"
+            android:background="@color/colorGreenLight"
             android:orientation="horizontal"
             android:weightSum="100"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="20"
-                android:src="@drawable/lvl1009" />
+                android:src="@drawable/lvl2010" />
 
             <TextView
                 android:id="@+id/game_limited_money"
@@ -43,7 +43,7 @@
                 android:layout_weight="60"
                 android:fontFamily="@font/kaushan"
                 android:gravity="center_vertical|end"
-                android:textColor="@color/colorBrownDark"
+                android:textColor="@color/colorMainDarkDark"
                 android:textSize="26dip"
                 tools:text="1 000 000 " />
 
@@ -74,7 +74,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/colorYellow"
+            android:background="@color/colorGreenLight"
             android:orientation="vertical"
             android:weightSum="100"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,7 +90,7 @@
                 android:fontFamily="@font/kaushan"
                 android:gravity="center"
                 android:text="@string/second_income"
-                android:textColor="@color/colorBrown"
+                android:textColor="@color/colorMainDarkDark"
                 android:textSize="18dip" />
 
             <TextView
@@ -111,8 +111,8 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
                 android:layout_weight="40"
-                android:textColor="@color/colorBrown"
-                android:background="@drawable/button_background_yellow_2"
+                android:textColor="@color/colorBackground"
+                android:background="@drawable/button_background_green_dark_dark"
                 android:fontFamily="@font/kaushan"
                 android:text="@string/back"
                 android:textSize="22dip" />

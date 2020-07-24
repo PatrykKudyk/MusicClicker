@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeColor="@color/colorMainDarkDark"
-        app:strokeWidth="2dp">
+        app:strokeWidth="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_weight="25"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                app:cardBackgroundColor="@color/colorMainLightLightLight"
+                app:cardBackgroundColor="@color/colorMain"
                 app:cardCornerRadius="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,18 +55,20 @@
 
 
             <LinearLayout
+                android:id="@+id/recycler_row_instrument_linear_normal"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:layout_weight="70"
                 android:orientation="vertical"
+                tools:visibility="gone"
                 android:weightSum="100">
 
                 <TextView
                     android:id="@+id/recycler_row_instrument_owned"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="30"
+                    android:layout_weight="20"
                     android:fontFamily="@font/dustismo_bold"
                     android:gravity="center"
                     android:textSize="24dip"
@@ -75,7 +77,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="25"
+                    android:layout_weight="20"
                     android:orientation="horizontal">
 
                     <TextView
@@ -104,6 +106,7 @@
                         android:src="@drawable/money" />
 
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -138,6 +141,39 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="20"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:fontFamily="@font/dustismo_bold"
+                        android:gravity="end|center_vertical"
+                        android:text="@string/upgrade"
+                        android:textSize="24dip" />
+
+                    <TextView
+                        android:id="@+id/recycler_row_instrument_upgrade_cost"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="30"
+                        android:fontFamily="@font/dustismo_bold"
+                        android:gravity="end|center_vertical"
+                        android:textSize="24dip"
+                        tools:text="2 000" />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:src="@drawable/money" />
+
+                </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -149,15 +185,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_weight="20"
+                    android:layout_weight="15"
                     android:layout_marginStart="20dp"
-                    android:background="@drawable/button_background_green_green"
+                    android:background="@drawable/button_background_green_dark_dark"
                     android:text="@string/upgrade"
+                    android:fontFamily="@font/kaushan"
                     android:textColor="@color/colorBackground" />
 
 
             </LinearLayout>
 
+
+        <LinearLayout
+            android:id="@+id/recycler_row_instrument_linear_first"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="70"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:weightSum="100">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/one_per_tap"
+                android:fontFamily="@font/dustismo_bold"
+                android:textSize="30dip"/>
+
+        </LinearLayout>
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

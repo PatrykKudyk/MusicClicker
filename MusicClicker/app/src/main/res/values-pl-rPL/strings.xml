@@ -20,5 +20,7 @@
     <string name="upgrade">Ulepsz</string>
     <string name="income">Przychód</string>
     <string name="cost">Koszt</string>
+    <string name="money_too_much">Za dużo hajsu mordo</string>
+    <string name="one_per_tap">Jeden za kliknięcie</string>
 
 </resources>

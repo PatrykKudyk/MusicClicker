@@ -18,7 +18,7 @@ class Game2RecyclerViewAdapter() : RecyclerView.Adapter<Game2ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: Game2ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
     }
 
 }

@@ -33,4 +33,8 @@ class GameActivity : AppCompatActivity() {
             .add(R.id.game_frame_layout, fragment)
             .commit()
     }
+
+    override fun onBackPressed() {
+
+    }
 }

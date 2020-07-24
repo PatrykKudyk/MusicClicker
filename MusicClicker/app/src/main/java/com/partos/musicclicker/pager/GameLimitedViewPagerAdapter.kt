@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.partos.flashback.recycler.MarginItemDecoration
 import com.partos.musicclicker.R
+import com.partos.musicclicker.models.Row
 import com.partos.musicclicker.recycler.Game1RecyclerViewAdapter
 import com.partos.musicclicker.recycler.Game2RecyclerViewAdapter
 import com.partos.musicclicker.recycler.Game3RecyclerViewAdapter
@@ -18,9 +19,11 @@ import kotlinx.android.synthetic.main.pager_cell.view.*
 class GameLimitedViewPagerAdapter : PagerAdapter {
 
     val context: Context
+    var rowList: ArrayList<ArrayList<Row>>
 
-    constructor(context: Context) : super() {
+    constructor(context: Context, rowList: ArrayList<ArrayList<Row>>) : super() {
         this.context = context
+        this.rowList = rowList
     }
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean =
@@ -40,7 +43,7 @@ class GameLimitedViewPagerAdapter : PagerAdapter {
         recyclerView.layoutManager = layoutManager
         recyclerView.addItemDecoration(MarginItemDecoration(12))
         when (position) {
-            0 -> recyclerView.adapter = Game1RecyclerViewAdapter()
+            0 -> recyclerView.adapter = Game1RecyclerViewAdapter(rowList[0])
             1 -> recyclerView.adapter = Game2RecyclerViewAdapter()
             2 -> recyclerView.adapter = Game3RecyclerViewAdapter()
             3 -> recyclerView.adapter = Game4RecyclerViewAdapter()
