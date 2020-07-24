@@ -11,8 +11,8 @@
     <string name="game_fast">Fast</string>
     <string name="game_long">Long</string>
     <string name="game_endless">Endless</string>
-    <string name="limit_fast">Until 1 000 000</string>
-    <string name="limit_long">Until 500 000 000</string>
+    <string name="limit_fast">Until 5 000 000</string>
+    <string name="limit_long">Until 5 000 000 000</string>
     <string name="second_income">Second income</string>
     <string name="back">Back</string>
     <string name="owned">Owned</string>
