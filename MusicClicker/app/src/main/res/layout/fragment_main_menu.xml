@@ -71,7 +71,7 @@
             android:id="@+id/main_menu_button_play"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@drawable/button_background_1"
+            android:background="@drawable/button_background_yellow_3"
             android:fontFamily="@font/kaushan"
             android:text="@string/play"
             android:textColor="@color/colorBackground"
