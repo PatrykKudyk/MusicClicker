@@ -3,10 +3,13 @@ package com.partos.musicclicker.logic.game
 import android.os.Handler
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.viewpager.widget.ViewPager
+import com.partos.musicclicker.MyApp
 import com.partos.musicclicker.R
 import com.partos.musicclicker.activities.GameActivity
 import com.partos.musicclicker.logic.TimerThread
+import com.partos.musicclicker.models.Items
 import com.partos.musicclicker.models.Row
 import com.partos.musicclicker.pager.GameLimitedViewPagerAdapter
 
@@ -14,15 +17,46 @@ class GameFastHandler(val rootView: View) {
 
     private lateinit var viewPager: ViewPager
     private lateinit var backButton: Button
+    private lateinit var incomeText: TextView
+    private lateinit var moneyText: TextView
     private var looperThread = TimerThread()
 
 
     fun initGame() {
         attachViews()
+        initItemsList()
         looperThread.start()
-        viewPager.adapter = GameLimitedViewPagerAdapter(rootView.context, createRowList())
+        initViews()
         attachListeners()
         startTimer()
+    }
+
+    private fun initViews() {
+        viewPager.adapter = GameLimitedViewPagerAdapter(rootView.context, createRowList())
+        moneyText.text = MyApp.money.toString()
+        incomeText.text = MyApp.income.toString()
+    }
+
+    private fun initItemsList() {
+        val ownedList = ArrayList<Long>()
+        for (i in 0 until 13) {
+            ownedList.add(0L)
+        }
+        val incomeList = ArrayList<Long>()
+        incomeList.add(0)
+        incomeList.add(1)
+        incomeList.add(3)
+        incomeList.add(10)
+        incomeList.add(30)
+        incomeList.add(100)
+        incomeList.add(300)
+        incomeList.add(1000)
+        incomeList.add(3500)
+        incomeList.add(12000)
+        incomeList.add(40000)
+        incomeList.add(130000)
+        incomeList.add(400000)
+        MyApp.itemsLimited = Items(ownedList, incomeList)
     }
 
     private fun startTimer() {
@@ -33,9 +67,9 @@ class GameFastHandler(val rootView: View) {
                 if (time == 20) {
                     time = 0
                     addMoney()
-                    setMoney()
-                    setIncome()
                 }
+                setMoney()
+                setIncome()
                 time++
                 threadHandler.postDelayed(this, 100)
             }
@@ -43,15 +77,24 @@ class GameFastHandler(val rootView: View) {
     }
 
     private fun addMoney() {
-
+        var moneyToAdd = 0L
+        for (i in 0 until 13) {
+            moneyToAdd += MyApp.itemsLimited.ownedList[i] * MyApp.itemsLimited.incomeList[i]
+        }
+        MyApp.money += moneyToAdd
     }
 
     private fun setMoney() {
-
+        moneyText.text = MyApp.money.toString()
     }
 
     private fun setIncome() {
-
+        var income = 0L
+        for (i in 0 until 13) {
+            income += MyApp.itemsLimited.ownedList[i] * MyApp.itemsLimited.incomeList[i]
+        }
+        MyApp.income = income
+        incomeText.text = MyApp.income.toString()
     }
 
     private fun attachListeners() {
@@ -83,5 +126,7 @@ class GameFastHandler(val rootView: View) {
     private fun attachViews() {
         viewPager = rootView.findViewById(R.id.game_limited_view_pager)
         backButton = rootView.findViewById(R.id.game_limited_button_back)
+        incomeText = rootView.findViewById(R.id.game_limited_income)
+        moneyText = rootView.findViewById(R.id.game_limited_money)
     }
 }
