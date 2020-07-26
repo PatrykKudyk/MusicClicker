@@ -10,7 +10,7 @@ import com.partos.musicclicker.logic.MoneyFormatter
 import com.partos.musicclicker.models.Row
 import kotlinx.android.synthetic.main.recycler_row_instrument.view.*
 
-class Game1RecyclerViewAdapter(val rowList: ArrayList<Row>) :
+class Game1RecyclerViewAdapter(var rowList: ArrayList<Row>) :
     RecyclerView.Adapter<Game1ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Game1ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -19,7 +19,7 @@ class Game1RecyclerViewAdapter(val rowList: ArrayList<Row>) :
     }
 
     override fun getItemCount(): Int {
-        return 13
+        return rowList.size
     }
 
     override fun onBindViewHolder(holder: Game1ViewHolder, position: Int) {
@@ -29,6 +29,7 @@ class Game1RecyclerViewAdapter(val rowList: ArrayList<Row>) :
         val cost = holder.view.recycler_row_instrument_cost
         val upgrade = holder.view.recycler_row_instrument_upgrade
         val upgradeCost = holder.view.recycler_row_instrument_upgrade_cost
+        val card = holder.view.recycler_row_instrument_card
         val context = holder.view.context
         val moneyFormatter = MoneyFormatter(context)
         when (position) {
@@ -47,8 +48,10 @@ class Game1RecyclerViewAdapter(val rowList: ArrayList<Row>) :
             12 -> image.setImageDrawable(context.getDrawable(R.drawable.lvl1013))
         }
         if (position != 0) {
+            holder.view.recycler_row_instrument_linear_first.visibility = View.GONE
+            holder.view.recycler_row_instrument_linear_normal.visibility = View.VISIBLE
             owned.text =
-                context.getString(R.string.owned) + moneyFormatter.formatMoney(rowList[position].owned)
+                context.getString(R.string.owned) + " "+ moneyFormatter.formatMoney(rowList[position].owned)
             income.text = moneyFormatter.formatMoney(rowList[position].income)
             cost.text = moneyFormatter.formatMoney(rowList[position].cost)
             upgradeCost.text = moneyFormatter.formatMoney(rowList[position].upgradeCost)
@@ -60,6 +63,12 @@ class Game1RecyclerViewAdapter(val rowList: ArrayList<Row>) :
             upgrade.setOnClickListener {
                 if (MyApp.money >= rowList[position].upgradeCost) {
                     MyApp.money -= rowList[position].upgradeCost
+                    val newUpgradeCost = (rowList[position].upgradeCost * 5)
+                    val newIncome = ((rowList[position].income * 1.5) + 1).toLong()
+                    rowList[position].upgradeCost = newUpgradeCost
+                    rowList[position].income = newIncome
+                    income.text = moneyFormatter.formatMoney(rowList[position].income)
+                    upgradeCost.text = moneyFormatter.formatMoney(rowList[position].upgradeCost)
                     if (MyApp.money >= rowList[position].upgradeCost) {
                         upgrade.setBackgroundResource(R.drawable.button_background_green_dark_dark)
                     } else {
@@ -71,8 +80,19 @@ class Game1RecyclerViewAdapter(val rowList: ArrayList<Row>) :
             holder.view.recycler_row_instrument_linear_first.visibility = View.VISIBLE
             holder.view.recycler_row_instrument_linear_normal.visibility = View.GONE
         }
-    }
 
+        card.setOnClickListener {
+            if (MyApp.money >= rowList[position].cost) {
+                MyApp.money -= rowList[position].cost
+                rowList[position].owned++
+                owned.text =
+                    context.getString(R.string.owned) + " "+ moneyFormatter.formatMoney(rowList[position].owned)
+                val newCost = ((rowList[position].cost * 1.05) + 1).toLong()
+                rowList[position].cost = newCost
+                cost.text = moneyFormatter.formatMoney(newCost)
+            }
+        }
+    }
 }
 
 class Game1ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {

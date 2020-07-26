@@ -6,6 +6,6 @@ import android.media.MediaPlayer
 class MyApp(): Application() {
     companion object {
         lateinit var mediaPlayer: MediaPlayer
-        var money: Long = 0
+        var money: Long = 50000
     }
 }

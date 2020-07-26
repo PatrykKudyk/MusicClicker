@@ -48,7 +48,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="6dp"
-                    android:src="@drawable/lvl1002" />
+                    tools:src="@drawable/lvl1002" />
 
 
             </com.google.android.material.card.MaterialCardView>
@@ -195,27 +195,26 @@
 
             </LinearLayout>
 
-
-        <LinearLayout
-            android:id="@+id/recycler_row_instrument_linear_first"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="70"
-            android:orientation="vertical"
-            android:visibility="gone"
-            tools:visibility="visible"
-            android:weightSum="100">
-
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:id="@+id/recycler_row_instrument_linear_first"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/one_per_tap"
-                android:fontFamily="@font/dustismo_bold"
-                android:textSize="30dip"/>
+                android:layout_margin="8dp"
+                android:layout_weight="70"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/one_per_tap"
+                    android:fontFamily="@font/dustismo_bold"
+                    android:textSize="30dip"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
