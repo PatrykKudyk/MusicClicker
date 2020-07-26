@@ -1,5 +1,6 @@
 package com.partos.musicclicker.recycler
 
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.partos.musicclicker.MyApp
 import com.partos.musicclicker.R
 import com.partos.musicclicker.logic.MoneyFormatter
+import com.partos.musicclicker.logic.TimerThread
 import com.partos.musicclicker.models.Row
 import kotlinx.android.synthetic.main.recycler_row_instrument.view.*
 
@@ -51,7 +53,7 @@ class Game1RecyclerViewAdapter(var rowList: ArrayList<Row>) :
             holder.view.recycler_row_instrument_linear_first.visibility = View.GONE
             holder.view.recycler_row_instrument_linear_normal.visibility = View.VISIBLE
             owned.text =
-                context.getString(R.string.owned) + " "+ moneyFormatter.formatMoney(rowList[position].owned)
+                context.getString(R.string.owned) + " " + moneyFormatter.formatMoney(rowList[position].owned)
             income.text = moneyFormatter.formatMoney(rowList[position].income)
             cost.text = moneyFormatter.formatMoney(rowList[position].cost)
             upgradeCost.text = moneyFormatter.formatMoney(rowList[position].upgradeCost)
@@ -69,6 +71,7 @@ class Game1RecyclerViewAdapter(var rowList: ArrayList<Row>) :
                     rowList[position].income = newIncome
                     income.text = moneyFormatter.formatMoney(rowList[position].income)
                     upgradeCost.text = moneyFormatter.formatMoney(rowList[position].upgradeCost)
+                    MyApp.itemsLimited.incomeList[position] = newIncome
                     if (MyApp.money >= rowList[position].upgradeCost) {
                         upgrade.setBackgroundResource(R.drawable.button_background_green_dark_dark)
                     } else {
@@ -81,15 +84,21 @@ class Game1RecyclerViewAdapter(var rowList: ArrayList<Row>) :
             holder.view.recycler_row_instrument_linear_normal.visibility = View.GONE
         }
 
+
         card.setOnClickListener {
-            if (MyApp.money >= rowList[position].cost) {
-                MyApp.money -= rowList[position].cost
-                rowList[position].owned++
-                owned.text =
-                    context.getString(R.string.owned) + " "+ moneyFormatter.formatMoney(rowList[position].owned)
-                val newCost = ((rowList[position].cost * 1.05) + 1).toLong()
-                rowList[position].cost = newCost
-                cost.text = moneyFormatter.formatMoney(newCost)
+            if (rowList[position].income != 0L) {
+                if (MyApp.money >= rowList[position].cost) {
+                    MyApp.money -= rowList[position].cost
+                    rowList[position].owned++
+                    owned.text =
+                        context.getString(R.string.owned) + " " + moneyFormatter.formatMoney(rowList[position].owned)
+                    MyApp.itemsLimited.ownedList[position]++
+                    val newCost = ((rowList[position].cost * 1.05) + 1).toLong()
+                    rowList[position].cost = newCost
+                    cost.text = moneyFormatter.formatMoney(newCost)
+                }
+            } else {
+                MyApp.money++
             }
         }
     }

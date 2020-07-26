@@ -12,8 +12,8 @@
     <string name="game_fast">Szybka</string>
     <string name="game_long">Długa</string>
     <string name="game_endless">Bez końca</string>
-    <string name="limit_fast">Do 1 000 000</string>
-    <string name="limit_long">Do 500 000 000</string>
+    <string name="limit_fast">Do 5 000 000</string>
+    <string name="limit_long">Do 5 000 000 000</string>
     <string name="second_income">Przychód na sekundę</string>
     <string name="back">Wróć</string>
     <string name="owned">Posiadane</string>
